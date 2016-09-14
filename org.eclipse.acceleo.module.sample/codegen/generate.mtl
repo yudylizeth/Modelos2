@@ -26,8 +26,36 @@
 	</li>
 [/template]
 
-[template public generarLista(atrib:Property)]
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public generate(aPackage : Package)]
+[comment @main /]
+[file ('/documento.html', false, 'UTF-8')]
+	<html>
+		<body>
+			<ul>
+				[aPackage.packagedElement->filter(Class).generarNombre()/]
+			</ul>
+		</body>
+	</html>
+[/file]
+[/template]
+
+[template public generarNombre(aClass : Class)]
 	<li>
-	[atrib.name /][atrib.type/]
+		[aClass.name/]
+		<ul>
+			[for (property : Property| aClass.attribute)]
+				[property.generarAtributos()/]
+			[/for]
+		</ul>
+	</li>	
+[/template]
+
+[template public generarAtributos(aProperty : Property)]
+	<li>
+		[aProperty.name/]:[aProperty.class/]
 	</li>
 [/template]
