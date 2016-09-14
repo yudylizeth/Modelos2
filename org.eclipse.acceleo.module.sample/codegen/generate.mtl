@@ -21,7 +21,7 @@
 	<ul>
 		[for (p : Property| c.attribute)]
 			[p.generarLista()/]
-			[p.datatype/]
+			[p.generartipo()/]
 		[/for]
 	</ul>
 	</li>
