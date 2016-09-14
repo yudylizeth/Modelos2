@@ -21,7 +21,6 @@
 	<ul>
 		[for (p : Property| c.attribute)]
 			[p.generarLista()/]
-			[p.datatype()/]
 		[/for]
 	</ul>
 	</li>
@@ -32,9 +31,3 @@
 	[atrib.name /]
 	</li>
 [/template]
-
-[template public generartipo(atrib:Property)]
-<li>
-[atrib.datatype/]
-</li>
-  [/template]
