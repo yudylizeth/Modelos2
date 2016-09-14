@@ -16,5 +16,18 @@
 [/template]
 
 [template public generarNombre(c:Class)]
-<li>[c.name/]</li>
+	<li>
+	[c.name/]
+	<ul>
+		[for (p : Property| c.attribute)]
+			[p.generarLista()/]
+		[/for]
+	</ul>
+	</li>
+[/template]
+
+[template public generarLista(atrib:Property)]
+	<li>
+	[atrib.name /]
+	</li>
 [/template]
