@@ -28,6 +28,6 @@
 
 [template public generarLista(atrib:Property)]
 	<li>
-	[atrib.name /]
+	[atrib.name /][atrib.type/]
 	</li>
 [/template]
