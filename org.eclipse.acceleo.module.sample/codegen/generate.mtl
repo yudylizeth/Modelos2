@@ -2,34 +2,6 @@
 [module generate('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 
-[template public generate(p : Package)]
-[comment @main/]
-[file ('/documento.html', false, 'UTF-8')]
-<html>
-	<body>
-		<ul>
-        	[p.packagedElement->filter(Class).generarNombre()/] 
-		</ul>
-	</body
-</html>
-[/file]
-[/template]
-
-[template public generarNombre(c:Class)]
-	<li>
-	[c.name/]
-	<ul>
-		[for (p : Property| c.attribute)]
-			[p.generarLista()/]
-		[/for]
-	</ul>
-	</li>
-[/template]
-
-[comment encoding = UTF-8 /]
-[module generate('http://www.eclipse.org/uml2/5.0.0/UML')]
-
-
 [template public generate(aPackage : Package)]
 [comment @main /]
 [file ('/documento.html', false, 'UTF-8')]
@@ -56,6 +28,10 @@
 
 [template public generarAtributos(aProperty : Property)]
 	<li>
-		[aProperty.name/]:[aProperty.class/]
+		[aProperty.name/]:[aProperty.type.typeName()/]
 	</li>
+[/template]
+
+[template public typeName(aType : Type)]
+	[aType.name/]
 [/template]
