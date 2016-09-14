@@ -20,7 +20,7 @@
 	[c.name/]
 	<ul>
 		[for (p : Property| c.attribute)]
-			[p.generarLista()/]
+			[p.generarLista()/][p.generarTipo()/]
 		[/for]
 	</ul>
 	</li>
@@ -30,4 +30,7 @@
 	<li>
 	[atrib.name /]
 	</li>
+[/template]
+[template public generarTipo(atrib: Property)]
+	[atrib.datatype /]
 [/template]
