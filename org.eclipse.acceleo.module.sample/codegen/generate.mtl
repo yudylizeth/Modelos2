@@ -31,6 +31,7 @@
 	[atrib.name /]
 	</li>
 [/template]
+
 [template public generarTipo(atrib: Property)]
-	[atrib.datatype /]
+	[atrib.datatype/]
 [/template]
